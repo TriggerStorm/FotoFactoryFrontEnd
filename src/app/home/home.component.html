@@ -1,0 +1,14 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Home -             Welcome to ff20</h2> Logged in as: {{username}}
+  <p *ngIf="errormessage; else elseBlock" class="alert alert-danger">{{errormessage}}</p>
+  <ng-template #elseBlock>
+
+    <div>
+
+      <ul>
+
+      </ul>
+    </div>
+  </ng-template>
+  <p><a [routerLink]="['/login']">Logout</a></p>
+</div>
