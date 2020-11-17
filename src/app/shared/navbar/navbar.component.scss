@@ -1,0 +1,43 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2b2b2b;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.email{
+  cursor: pointer;
+  position:relative;
+  top:13px;
+  left: 250px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+
+.phoneNumber{
+  position:relative;
+  top:13px;
+  left: 200px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
