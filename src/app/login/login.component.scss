@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+h1{
+  font-family: 'Architects Daughter', cursive;
+}
 #posters{
   position:relative;
   left: 480px;
-  top: 120px;
+  top: 150px;
 }
 
 .entire{
@@ -10,8 +15,8 @@
 
 h1{
   position: relative;
-  top: -7%;
-  right: -20%;
+  top: -5%;
+  right: -15%;
 }
 .login-box{
   width: 330px;
@@ -20,7 +25,7 @@ h1{
   background-position: center center;
   background-size: 100% 100%;
   color: black;
-  top: 60%;
+  top: 65%;
   left: 17%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -40,6 +45,7 @@ h1{
 }
 
 .login-box input[type="text"], input[type="password"]{
+  //font-family: 'Architects Daughter', cursive;
   border: none;
   border-bottom: 1px solid #bb967c;
   background: transparent;
@@ -50,6 +56,7 @@ h1{
 }
 
 .login-box input[type="submit"]{
+  font-family: 'Architects Daughter', cursive;
   border: none;
   outline: none;
   height: 40px;
@@ -75,6 +82,7 @@ h1{
 
 .alert-danger{
   color: #cd9c37;
+  background: none;
   position: relative;
   bottom: 20px;
 }

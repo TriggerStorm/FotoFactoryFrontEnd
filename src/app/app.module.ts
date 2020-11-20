@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        NgbModule
     ],
   providers: [],
   bootstrap: [AppComponent]
