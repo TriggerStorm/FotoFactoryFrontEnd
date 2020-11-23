@@ -1,15 +1,24 @@
 <app-nvbar></app-nvbar>
-<div class="col-md-6 col-md-offset-3">
-  <h2>Home -             Welcome to ff20</h2> Logged in as: {{username}}
+<section>
+  <div class="container">
+  <div class="row gap100">
+    <div class="col-md-6">
+      <h1>Welcome!</h1>
+      <p>Hey! We are happy to introduce you our Web Application, where you can try pictures on a different backgrounds and play around to find best
+        option for you. Make your house look pretty and stylish!</p>
+    </div>
+    <div class="col-md-6">
+      <img class="img-responsive" id="pic" src="/assets/plakat.jpg" alt="pics_on_the_wall">
+    </div>
+  </div>
+</div>
+</section>
+<p><a [routerLink]="['/login']">Logout</a></p>
+
+<!--<div class="col-md-6 col-md-offset-3">
+  Logged in as: {{username}}
   <p *ngIf="errormessage; else elseBlock" class="alert alert-danger">{{errormessage}}</p>
   <ng-template #elseBlock>
-
-    <div>
-
-      <ul>
-            <h1>WE ARE IN MFUCKERS</h1>
-      </ul>
-    </div>
   </ng-template>
   <p><a [routerLink]="['/login']">Logout</a></p>
-</div>
+</div>-->

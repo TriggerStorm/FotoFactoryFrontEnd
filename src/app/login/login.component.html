@@ -1,6 +1,11 @@
-<div class="entire">
+<div class="container">
+<div class="row entire">
+
+  <div class="col-7">
   <img src="/assets/posters.jpg" alt="posters" id="posters" width=1000 height= 500>
-  <div class="login-box" >
+  </div>
+
+  <div class="col-5 login-box">
     <img src="/assets/login_person.jpg" class="avatar">
     <h1>Login Here</h1>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -27,5 +32,7 @@
     </div>
     <div *ngIf="errormessage" class="alert-danger">{{errormessage}}</div>
   </form>
+</div>
+
 </div>
 </div>
