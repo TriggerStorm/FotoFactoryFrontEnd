@@ -9,6 +9,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NvbarComponent } from './home/nvbar/nvbar.component';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,14 +20,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    NvbarComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
         HttpClientModule,
-        NgbModule
+        NgbModule,
+        ButtonsModule.forRoot(),
+        BrowserAnimationsModule,
+        BsDropdownModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]
