@@ -3,8 +3,8 @@
   <div class="container">
   <div class="row gap100">
     <div class="col-md-6">
-      <h1>Welcome!</h1>
-      <p>Hey! We are happy to introduce you our Web Application, where you can try pictures on a different backgrounds and play around to find best
+      <h1 id="textHead">Welcome!</h1>
+      <p id="text">Hey! We are happy to introduce you our Web Application, where you can try pictures on a different backgrounds and play around to find best
         option for you. Make your house look pretty and stylish!</p>
     </div>
     <div class="col-md-6">
@@ -13,8 +13,24 @@
   </div>
 </div>
 </section>
-<p><a [routerLink]="['/login']">Logout</a></p>
 
+<footer id="divCorners">
+  <div class="row">
+    <div class="col-md-4 smed">
+      <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Ffoto-factory.dk&t=Foto%20Factory" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://twitter.com/intent/tweet?text=Foto%20Factory&url=https%3A%2F%2Ffoto-factory.dk&via=fotofactorydk" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.pinterest.com/FotoFactory/_shop/" target="_blank"><i class="fab fa-pinterest-square"></i></a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ffoto-factory.dk" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="col-md-4">
+      <p>Copyright</p>
+      <a id="logOut" [routerLink]="['/login']">Logout</a>
+    </div>
+    <div class="col-md-4">
+      <h1 id="logoBottom">FotoFactory</h1>
+    </div>
+  </div>
+</footer>
 <!--<div class="col-md-6 col-md-offset-3">
   Logged in as: {{username}}
   <p *ngIf="errormessage; else elseBlock" class="alert alert-danger">{{errormessage}}</p>
