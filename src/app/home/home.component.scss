@@ -7,6 +7,11 @@
   opacity: 1;
 }
 
+.carousel-inner > .carousel-item > img{
+  height: 408px;
+  width: 600px;
+}
+
 #logoBottom{
   color: white;
   font-size: 30px;
@@ -16,7 +21,11 @@
   padding-top: 17px;
 }
 
-#logOut{
+#logOut {
+  padding-top: 2%;
+}
+
+#logOutLink{
   color: white;
 }
 
@@ -24,10 +33,12 @@
   //border-radius: 60px;
   background: #af6c3d;
   text-align: center;
-  padding-bottom: 0px;
+  padding-bottom: 6px;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
+
 #text{
   font-family: 'Dosis', sans-serif;
   font-size: 25px;
@@ -40,7 +51,7 @@
 }
 
 .gap100{
-  padding: 70px 0px;
+  padding: 65px 0px;
 }
 
 .smed i{
@@ -48,5 +59,4 @@
   font-size: 40px;
   margin: 10px;
   padding-top: 10px;
-
 }
