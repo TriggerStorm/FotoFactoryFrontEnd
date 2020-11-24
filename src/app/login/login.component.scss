@@ -3,10 +3,9 @@
 h1{
   font-family: 'Architects Daughter', cursive;
 }
-#posters{
-  position:relative;
-  left: 40%;
-  top: 30%;
+.posters{
+  margin-top: 130px;
+  margin-left: -150px;
 }
 
 h1{
@@ -14,6 +13,7 @@ h1{
   top: -5%;
   right: -15%;
 }
+
 .login-box{
   width: 330px;
   height: 450px;
@@ -21,8 +21,8 @@ h1{
   background-position: center center;
   background-size: 100% 100%;
   color: black;
-  top: 50%;
-  left: 17%;
+  margin-top: 330px;
+  left: 280px;
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;

@@ -1,11 +1,6 @@
-<div class="container">
-<div class="row entire">
-
-  <div class="col-7">
-  <img src="/assets/posters.jpg" alt="posters" id="posters" width=1000 height= 500>
-  </div>
-
-  <div class="col-5 login-box">
+<div class="row">
+  <div class="col-md-5">
+    <div class="login-box">
     <img src="/assets/login_person.jpg" class="avatar">
     <h1>Login Here</h1>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -32,7 +27,17 @@
     </div>
     <div *ngIf="errormessage" class="alert-danger">{{errormessage}}</div>
   </form>
+  </div>
 </div>
 
+  <div class="col-md-7">
+<div class="posters">
+  <img src="/assets/posters.jpg" alt="posters" width=1000 height= 500>
 </div>
+  </div>
+
+  <!--<div class="col-md-8" style="background: red">
+    <img src="/assets/posters.jpg" alt="posters" id="posters" width=1000 height= 500>
+  </div>
+</div>-->
 </div>
