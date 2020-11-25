@@ -4,6 +4,7 @@ h1{
   font-family: 'Architects Daughter', cursive;
 }
 .posters{
+  z-index : 0;
   margin-top: 130px;
   margin-left: -150px;
 }
@@ -15,6 +16,7 @@ h1{
 }
 
 .login-box{
+  z-index : 1;
   width: 330px;
   height: 450px;
   background-image: url('img/frame.png');
