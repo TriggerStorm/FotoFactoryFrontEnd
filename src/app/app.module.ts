@@ -15,6 +15,7 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { NgxPopper } from 'angular-popper';
+import { WorkspaceComponent } from './workspace/workspace.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgxPopper } from 'angular-popper';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    NvbarComponent
+    NvbarComponent,
+    WorkspaceComponent
   ],
     imports: [
         BrowserModule,
