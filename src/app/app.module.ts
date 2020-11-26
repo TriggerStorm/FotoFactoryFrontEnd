@@ -15,6 +15,11 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CommonModule} from '@angular/common';
 import { NgxPopper } from 'angular-popper';
+import { DenmarkComponent } from './gallory/denmark/denmark.component';
+import { FaroeIslandsComponent } from './gallory/faroe-islands/faroe-islands.component';
+import { CopenhagenComponent } from './gallory/copenhagen/copenhagen.component';
+import { BlackAndWhiteComponent } from './gallory/black-and-white/black-and-white.component';
+import { ScotlandComponent } from './gallory/scotland/scotland.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { NgxPopper } from 'angular-popper';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    NvbarComponent
+    NvbarComponent,
+    DenmarkComponent,
+    FaroeIslandsComponent,
+    CopenhagenComponent,
+    BlackAndWhiteComponent,
+    ScotlandComponent
   ],
     imports: [
         BrowserModule,

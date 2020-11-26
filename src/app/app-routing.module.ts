@@ -4,10 +4,22 @@ import {LoginComponent} from './login/login.component';
 import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home/home.component';
 import {AuthGuard} from './guards/auth.guards';
+import {DenmarkComponent} from './gallory/denmark/denmark.component';
+import {FaroeIslandsComponent} from './gallory/faroe-islands/faroe-islands.component';
+import {CopenhagenComponent} from './gallory/copenhagen/copenhagen.component';
+import {BlackAndWhiteComponent} from './gallory/black-and-white/black-and-white.component';
+import {ScotlandComponent} from './gallory/scotland/scotland.component';
+
 
 const routes: Routes = [
+  { path: 'denmark', component: DenmarkComponent},
+  { path: 'faroe-islands', component: FaroeIslandsComponent},
+  { path: 'copenhagen', component: CopenhagenComponent},
+  { path: 'black-and-white', component: BlackAndWhiteComponent},
+  { path: 'scotland', component: ScotlandComponent},
+
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent}, //, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent}, /*//, canActivate: [AuthGuard] },*/
   { path: '**', redirectTo: '' }];
 
 @NgModule({
