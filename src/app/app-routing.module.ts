@@ -7,10 +7,11 @@ import {AuthGuard} from './guards/auth.guards';
 import {WorkspaceComponent} from './workspace/workspace.component';
 
 const routes: Routes = [
+  { path: 'workspace', component: WorkspaceComponent},
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent},  /*, canActivate: [AuthGuard] },*/
   { path: '**', redirectTo: '' },
-  { path: 'workspace', component: WorkspaceComponent}];
+  ];
 
 @NgModule({
   imports: [
