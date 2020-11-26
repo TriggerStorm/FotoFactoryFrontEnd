@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Lora:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Lora:ital@1&family=Raleway&display=swap');
+
+#pic{
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.carousel-inner > .carousel-item > img{
+  height: 408px;
+  width: 600px;
+}
+
+#logoBottom{
+  color: white;
+  font-size: 30px;
+  font-family: 'Sansita Swashed', cursive;
+  text-align: right;
+  padding-right: 10%;
+  padding-top: 17px;
+}
+
+#logOut {
+  padding-top: 2%;
+}
+
+#logOutLink{
+  color: white;
+}
+
+#divCorners{
+  //border-radius: 60px;
+  background: #af6c3d;
+  text-align: center;
+  padding-bottom: 6px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#text{
+  font-family: 'Dosis', sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+#textHead{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.gap100{
+  padding: 65px 0px;
+}
+
+.smed i{
+  color: #fff;
+  font-size: 40px;
+  margin: 10px;
+  padding-top: 10px;
+}

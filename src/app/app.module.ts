@@ -13,7 +13,8 @@ import { NvbarComponent } from './home/nvbar/nvbar.component';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {CommonModule} from '@angular/common';
+import { NgxPopper } from 'angular-popper';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         NgbModule,
         ButtonsModule.forRoot(),
         BrowserAnimationsModule,
-        BsDropdownModule.forRoot()
+        BsDropdownModule.forRoot(),
+        NgxPopper
     ],
   providers: [],
   bootstrap: [AppComponent]

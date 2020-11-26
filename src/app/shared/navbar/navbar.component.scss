@@ -4,12 +4,9 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #2b2b2b;
-  height: 30px;
+  height: 35px;
 }
 
-li {
-  float: right;
-}
 
 li a {
   display: block;
@@ -25,18 +22,18 @@ li a:hover {
 }
 
 .envelop{
+
+  color: white;
   position:relative;
-  //top:5px;
-  left: 112px;
-  top: 0px;
-  width:25px;
-  height: 15px;
+  top: 14%;
+  left: 232px;
+  width: 25px;
 }
 
 .email{
   cursor: pointer;
   position:relative;
-  top: 2px;
+  top: 14%;
   left: 230px;
   font-size: 16px;
   text-align: center;
@@ -44,78 +41,28 @@ li a:hover {
 }
 
 .phone{
+  color: white;
   position:relative;
-  top: 0px;
-  left: 198px;
+  top: 14%;
+  left: 203px;
   height: 15px;
   width: 25px;
 }
 
 .phoneNumber{
   position:relative;
-  top: 2px;
+  top: 14%;
   left: 200px;
   font-size: 16px;
   text-align: center;
   color: white;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: right;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .selectpicker{
   float: right;
   position: relative;
-  top: 2px;
-  right: 1%;
+  top: 14%;
+  right: 3%;
 }
 
 .dk-flag{
