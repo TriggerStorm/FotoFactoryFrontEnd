@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./denmark.component.scss']
 })
 export class DenmarkComponent implements OnInit {
-
+  public isActive = false;
   constructor() { }
+
 
   ngOnInit(): void {
   }
 
+
+  onClick(): void {
+    this.isActive = !this.isActive;
+  }
 }
