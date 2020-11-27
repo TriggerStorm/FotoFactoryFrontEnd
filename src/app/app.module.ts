@@ -20,6 +20,8 @@ import { FaroeIslandsComponent } from './gallory/faroe-islands/faroe-islands.com
 import { CopenhagenComponent } from './gallory/copenhagen/copenhagen.component';
 import { BlackAndWhiteComponent } from './gallory/black-and-white/black-and-white.component';
 import { ScotlandComponent } from './gallory/scotland/scotland.component';
+import { WorkspaceComponent } from './workspace/workspace.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ScotlandComponent } from './gallory/scotland/scotland.component';
     FaroeIslandsComponent,
     CopenhagenComponent,
     BlackAndWhiteComponent,
-    ScotlandComponent
+    ScotlandComponent,
+    WorkspaceComponent
+
   ],
     imports: [
         BrowserModule,
