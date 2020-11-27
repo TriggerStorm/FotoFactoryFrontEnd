@@ -1,5 +1,10 @@
+
+
 <section style="min-height: 550px; width: 1200px; padding: 30px">
   <div class="container" style="min-height: 550px;">
+
+
+
     <div class="btn-group dropright ml-5">
       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Choose Workspace
@@ -14,9 +19,10 @@
     <div class="row">
     <div class="col-md-9" style=" min-height: 580px;">
       <div class="row justify-content-center" style="padding: 7px">
-        <div class="" style="background: white; height: 560px; min-width: 100%; border: 5px solid gray;">
 
-          //WorkSpace
+        <div class="" id="workspaceId" (click)="changeColor()">
+
+
 
         </div>
       </div>
@@ -35,16 +41,7 @@
                   <a class="dropdown-item" href="#">Large</a>
                 </div>
               </div>
-              <div class="dropdown show   settingsBoxes ">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Background
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Red</a>
-                  <a class="dropdown-item" href="#">White</a>
-                  <a class="dropdown-item" href="#">Brown</a>
-                </div>
-              </div>
+
               <div class="dropdown show settingsBoxes">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Choose Frame
@@ -55,6 +52,12 @@
                   <a class="dropdown-item" href="#">Aluminium</a>
                 </div>
               </div>
+
+
+              <div class="settingsBoxes">
+                <input class="colorPicker" name="ColorPickerId" type="color" id="MyColor"/>
+              </div>
+
             </div>
          </div>
 
