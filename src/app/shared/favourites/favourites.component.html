@@ -1,13 +1,11 @@
-<div class="container float-right" style="min-height: 550px; width: 270px; background-color: #111111; border-left: 2px solid blue">
-      <div class="" style="margin: 10px">
-        <div class="" style="background-color: green; height: 200px; width: 200px; margin: 10px">
-          <img src="/assets/denmark-posters/FF158DK.png" class="pic">
-        </div>
-        <div class="" style="background-color: blue; height: 200px; width: 200px; margin: 10px">
-
-        </div>
-        <div class="" style="background-color: yellow; height: 200px; width: 200px; margin: 10px;">
-
-        </div>
+<div class="float-right" style="min-height: 550px; max-width: 270px; border-left: 2px solid grey">
+  <div class="" style="padding-right: 50px">
+    <h2 class="myFav">My Favourites</h2>
+    <br>
+  <ul *ngIf="favourites">
+      <div *ngFor="let favourite of favourites" style="height: 200px; width: 200px; margin-bottom: 10px; margin-left: -5px;">
+        <img src="{{favourite.path}}" class="pic">
       </div>
+    </ul>
+  </div>
   </div>
