@@ -21,6 +21,7 @@ import { CopenhagenComponent } from './gallory/copenhagen/copenhagen.component';
 import { BlackAndWhiteComponent } from './gallory/black-and-white/black-and-white.component';
 import { ScotlandComponent } from './gallory/scotland/scotland.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
+import { FavouritesComponent } from './shared/favourites/favourites.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { WorkspaceComponent } from './workspace/workspace.component';
     CopenhagenComponent,
     BlackAndWhiteComponent,
     ScotlandComponent,
-    WorkspaceComponent
+    WorkspaceComponent,
+    FavouritesComponent
 
   ],
     imports: [

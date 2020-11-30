@@ -10,9 +10,11 @@ import {FaroeIslandsComponent} from './gallory/faroe-islands/faroe-islands.compo
 import {CopenhagenComponent} from './gallory/copenhagen/copenhagen.component';
 import {BlackAndWhiteComponent} from './gallory/black-and-white/black-and-white.component';
 import {ScotlandComponent} from './gallory/scotland/scotland.component';
+import {FavouritesComponent} from './shared/favourites/favourites.component';
 
 
 const routes: Routes = [
+  {path: 'fav', component: FavouritesComponent},
   { path: 'workspace', component: WorkspaceComponent},
   { path: 'denmark', component: DenmarkComponent},
   { path: 'faroe-islands', component: FaroeIslandsComponent},
