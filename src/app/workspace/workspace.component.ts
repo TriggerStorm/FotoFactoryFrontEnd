@@ -12,4 +12,10 @@ export class WorkspaceComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  changeColor(): void{
+    document.getElementById(
+      'workspaceId').style.backgroundColor =
+      (document.getElementById(
+        'MyColor') as HTMLInputElement).value;
+  }
 }
