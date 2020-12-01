@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PosterModel} from '../../shared/models/posterModel';
+import {CollectionService} from '../../shared/posterService/collection.service';
 
 @Component({
   selector: 'app-scotland',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScotlandComponent implements OnInit {
 
-  constructor() { }
+  public isActive = false;
+  Collection: PosterModel[];
+  constructor(private Poster: CollectionService) { }
 
   ngOnInit(): void {
+    this.Poster.getCollection(5).then( (data) => {
+      console.log(data);
+      this.Collection = data;
+    });
   }
 
+
+  onClick(): void {
+    this.isActive = !this.isActive;
+  }
 }

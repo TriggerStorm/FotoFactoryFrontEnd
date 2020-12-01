@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PosterModel} from '../../shared/models/posterModel';
 import {CollectionService} from '../../shared/posterService/collection.service';
+import {ancestorWhere} from 'tslint';
 
 
 
@@ -21,7 +22,6 @@ export class DenmarkComponent implements OnInit {
       this.Collection = data;
     });
   }
-
 
 
   onClick(): void {

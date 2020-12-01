@@ -4,4 +4,5 @@ export class PosterModel {
   sku: string;
   path: string;
   colId: number;
+  isFavor: boolean;
 }

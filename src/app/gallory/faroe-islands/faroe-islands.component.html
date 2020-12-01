@@ -1,3 +1,4 @@
+<app-favourites></app-favourites>
 <div class="row gap100" align="center">
 
   <div class="col-md-12" style="background-color: #dddad0">
@@ -6,38 +7,21 @@
   </div>
 </div>
 <section style="background:#dddad0;min-height: 300px;padding-top:50px;padding-bottom: 25px;">
-  <div class="container" style="background:#dddad0;min-height: 225px">
-    <div class="row">
-      <div class="col-3">
-          <img src="/assets/denmark-posters/FF101DK.png"  width=200 height= 200>
+  <div class="container" style="background:#dddad0;min-height: 225px;padding-bottom: 20px">
+    <ul *ngIf="Collection">
+      <div class="row">
+        <div *ngFor="let posterModel of Collection">
+          <div class="col-3">
+            <img src="{{posterModel.path}}" id ={{posterModel.id}} class="pic" width="200" height="200">
+            <div class="row">
+              <h5 class="col-md-6" style=" padding-left: 0px">name</h5>
+              <div (click)="onClick()">
+                <i class="fas fa-heart" style="padding-left:  26px; padding-top: 10px" [ngClass] = "{'active': isActive}"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF158DK.png"  width=200 height= 200>
-      </div>
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF103DK.png"  width=200 height= 200>
-      </div>
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF104DK.png"  width=200 height= 200>
-      </div>
-    </div>
+    </ul>
   </div>
-
-  <div class="container" style="background:#dddad0;min-height: 225px">
-    <div class="row">
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF105DK.png"  width=200 height= 200>
-      </div>
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF106DK.png"  width=200 height= 200>
-      </div>
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF107DK.png"  width=200 height= 200>
-      </div>
-      <div class="col-3">
-        <img src="/assets/denmark-posters/FF108DK.png"  width=200 height= 200>
-      </div>
-    </div>
-  </div>
-
 </section>
