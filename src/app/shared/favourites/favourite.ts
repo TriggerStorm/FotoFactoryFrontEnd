@@ -1,5 +1,5 @@
 
-export interface NewFav{
+export interface Favourite{
   posterName: string;
   posterSku: string;
   path: string;

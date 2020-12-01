@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
-import {NewFav} from "./favourite";
+import {Favourite} from './favourite';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class FavouritesService {
       console.log(a);
       const path = a.path;
       const posterName = a.posterName;
-      return {path, posterName, collectionId: a.collectionId, posterSku: a.posterSku } as NewFav ;
+      return {path, posterName, collectionId: a.collectionId, posterSku: a.posterSku } as Favourite ;
     });
   }
 }
