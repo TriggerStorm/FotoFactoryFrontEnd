@@ -37,7 +37,7 @@ import { FavouritesComponent } from './shared/favourites/favourites.component';
     BlackAndWhiteComponent,
     ScotlandComponent,
     WorkspaceComponent,
-    FavouritesComponent
+    FavouritesComponent,
 
   ],
     imports: [
