@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DenmarkComponent} from '../../gallory/denmark/denmark.component';
 
 
 @Component({
@@ -12,5 +13,4 @@ export class NvbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
