@@ -2,7 +2,7 @@
   <div class="" style="padding-right: 50px">
     <h2 class="myFav">My Favourites</h2>
   <ul *ngIf="favourites">
-      <div *ngFor="let favourite of favourites" style="height: 200px; width: 200px; margin-bottom: 10px; margin-left: -5px;">
+      <div cdkDrag *ngFor="let favourite of favourites" style="height: 200px; width: 200px; margin-bottom: 10px; margin-left: -5px;">
         <img src="{{favourite.path}}" class="pic">
       </div>
     </ul>

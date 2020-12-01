@@ -22,6 +22,7 @@ import { BlackAndWhiteComponent } from './gallory/black-and-white/black-and-whit
 import { ScotlandComponent } from './gallory/scotland/scotland.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
 import { FavouritesComponent } from './shared/favourites/favourites.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -38,7 +39,6 @@ import { FavouritesComponent } from './shared/favourites/favourites.component';
     ScotlandComponent,
     WorkspaceComponent,
     FavouritesComponent,
-
   ],
     imports: [
         BrowserModule,
@@ -49,7 +49,9 @@ import { FavouritesComponent } from './shared/favourites/favourites.component';
         ButtonsModule.forRoot(),
         BrowserAnimationsModule,
         BsDropdownModule.forRoot(),
-        NgxPopper
+        NgxPopper,
+        DragDropModule
+
     ],
   providers: [],
   bootstrap: [AppComponent]
