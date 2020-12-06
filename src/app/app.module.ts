@@ -49,7 +49,7 @@ import { FavouritesComponent } from './shared/favourites/favourites.component';
         ButtonsModule.forRoot(),
         BrowserAnimationsModule,
         BsDropdownModule.forRoot(),
-        NgxPopper
+        NgxPopper,
     ],
   providers: [],
   bootstrap: [AppComponent]

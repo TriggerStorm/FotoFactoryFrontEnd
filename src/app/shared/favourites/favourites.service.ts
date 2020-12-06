@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {Favourite} from './favourite';
+import {isLineBreak} from 'codelyzer/angular/sourceMappingVisitor';
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +24,14 @@ export class FavouritesService {
       return {path, posterName, collectionId: a.collectionId, posterSku: a.posterSku } as Favourite ;
     });
   }
+  // tslint:disable-next-line:typedef
+  async addFavorite(fav: number){
+     return this.http.post<number>(environment.apiUrl + '/api/favourite/', + fav).subscribe();
+  }
+  // tslint:disable-next-line:typedef
+  async removefavor(fav: number){
+    // @ts-ignore
+    return this.http.delete<number>(environment.apiUrl + '/api/favourite/', + fav).subscribe();
+  }
+
 }

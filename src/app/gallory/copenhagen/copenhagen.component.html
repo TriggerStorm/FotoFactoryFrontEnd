@@ -12,9 +12,9 @@
       <div class="row">
         <div *ngFor="let posterModel of Collection">
           <div class="col-3">
-            <img src="{{posterModel.path}}" id ={{posterModel.id}} class="pic" width="200" height="200">
+            <img src="{{posterModel.Path}}" id ={{posterModel.id}} class="pic" width="200" height="200">
             <div class="row">
-              <h5 class="col-md-6" style=" padding-left: 0px">name</h5>
+              <h9 class="text-center" style = "padding-left: 60px; padding-bottom: 20px" >{{posterModel.PosterName}}</h9>
               <div (click)="onClick()">
                 <i class="fas fa-heart" style="padding-left:  26px; padding-top: 10px" [ngClass] = "{'active': isActive}"></i>
               </div>

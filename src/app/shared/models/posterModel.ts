@@ -1,8 +1,8 @@
 export class PosterModel {
-  id: number;
-  name: string;
-  sku: string;
-  path: string;
-  colId: number;
+  PId: number;
+  PosterName: string;
+  PosterSku: string;
+  Path: string;
+  CollectionId: number;
   isFavor: boolean;
 }

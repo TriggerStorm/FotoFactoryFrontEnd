@@ -18,12 +18,13 @@ export class CollectionService {
     return uspromise.map(a => {
 
       console.log(a);
-      const PosterID = a.id;
-      const Name = a.name;
-      const sku = a.sku;
+      const posterId = a.posterId;
+      const Name = a.posterName;
+      const sku = a.posterSku;
       const path = a.path;
-      const colId = a.colId;
-      return {PosterID, Name, sku, path, colId} as unknown as PosterModel ;
+      const colId = a.collectionId;
+      const isFavor = a.isFavor;
+      return {PId: posterId, PosterName: Name, PosterSku: sku, Path: path, CollectionId: colId, isFavor} as PosterModel ;
     });
   }
 }
