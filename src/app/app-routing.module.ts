@@ -11,9 +11,11 @@ import {CopenhagenComponent} from './gallory/copenhagen/copenhagen.component';
 import {BlackAndWhiteComponent} from './gallory/black-and-white/black-and-white.component';
 import {ScotlandComponent} from './gallory/scotland/scotland.component';
 import {FavouritesComponent} from './shared/favourites/favourites.component';
+import {SummaryComponent} from './summary/summary.component';
 
 
 const routes: Routes = [
+  {path: 'summary', component: SummaryComponent},
   {path: 'fav', component: FavouritesComponent},
   { path: 'workspace', component: WorkspaceComponent},
   { path: 'denmark', component: DenmarkComponent},

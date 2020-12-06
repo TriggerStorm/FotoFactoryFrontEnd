@@ -23,6 +23,7 @@ import { ScotlandComponent } from './gallory/scotland/scotland.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
 import { FavouritesComponent } from './shared/favourites/favourites.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { SummaryComponent } from './summary/summary.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     ScotlandComponent,
     WorkspaceComponent,
     FavouritesComponent,
+    SummaryComponent
   ],
     imports: [
         BrowserModule,

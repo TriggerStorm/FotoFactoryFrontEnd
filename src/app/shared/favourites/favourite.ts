@@ -1,4 +1,3 @@
-
 export interface Favourite{
   posterName: string;
   posterSku: string;

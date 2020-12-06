@@ -1,10 +1,13 @@
-<div class="float-right" style="min-height: 550px; max-width: 270px; border-left: 2px solid grey">
-  <div class="" style="padding-right: 50px">
+<div class="float-right entireDiv">
+  <div style="padding-right: 50px;"><!--cdkDropList [cdkDropListData]="favourites" (cdkDropListDropped)="dropped($event)"-->
     <h2 class="myFav">My Favourites</h2>
-  <ul *ngIf="favourites">
-      <div cdkDrag *ngFor="let favourite of favourites" style="height: 200px; width: 200px; margin-bottom: 10px; margin-left: -5px;">
-        <img src="{{favourite.path}}" class="pic">
-      </div>
+    <ul *ngIf="favourites">
+      <div id="picDiv"
+            *ngFor="let favourite of favourites">
+
+        <div [cdkDragData]="favourites" cdkDrag><img src="{{favourite.path}}" class="pic"></div>
+
+  </div>
     </ul>
   </div>
   </div>
