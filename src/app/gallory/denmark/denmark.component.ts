@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {PosterModel} from '../../shared/models/posterModel';
+import {CollectionService} from '../../shared/posterService/collection.service';
+import {ancestorWhere} from 'tslint';
+import {Loginmodel} from '../../shared/models/loginmodel';
+import {Favourite} from '../../shared/favourites/favourite';
+import {FavouritesService} from '../../shared/favourites/favourites.service';
+import {FormControl} from '@angular/forms';
+
 
 
 @Component({
@@ -8,14 +16,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DenmarkComponent implements OnInit {
   public isActive = false;
-  constructor() { }
+  posterId = new FormControl('');
+  Collection: PosterModel[];
+  isFavor: any;
+
+
+  constructor(private Poster: CollectionService,
+              private  fav: FavouritesService) { }
 
 
   ngOnInit(): void {
+    this.Poster.getCollection(1).then( (data) => {
+      console.log(data);
+      this.Collection = data;
+    });
   }
 
+  removeTest(id: number): void{
+    this.fav.removefavor(id);
+  }
 
-  onClick(): void {
-    this.isActive = !this.isActive;
+  onClick(id: number): void {
+    // tslint:disable-next-line:no-unused-expression
+    this.fav.addFavorite(id);
+    debugger;
+    this.fav.getAllFavourites();
+    //this.isActive = !this.isActive;
+    // tslint:disable-next-line:no-conditional-assignment
+    if (!(this.isFavor = true)) {
+      {
+        this.isFavor = true;
+      }
+    } else {
+      this.isFavor = false;
+    }
   }
 }

@@ -54,6 +54,7 @@ import { SummaryComponent } from './summary/summary.component';
         NgxPopper,
         DragDropModule
 
+
     ],
   providers: [],
   bootstrap: [AppComponent]
