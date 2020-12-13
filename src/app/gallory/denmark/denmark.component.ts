@@ -19,6 +19,8 @@ export class DenmarkComponent implements OnInit {
   posterId = new FormControl('');
   Collection: PosterModel[];
   isFavor: any;
+  ture: boolean;
+
 
 
   constructor(private Poster: CollectionService,
@@ -32,16 +34,11 @@ export class DenmarkComponent implements OnInit {
     });
   }
 
-  removeTest(id: number): void{
-    this.fav.removefavor(id);
-  }
-
   onClick(id: number): void {
     // tslint:disable-next-line:no-unused-expression
-    this.fav.addFavorite(id);
-    debugger;
-    this.fav.getAllFavourites();
-    //this.isActive = !this.isActive;
+    this.fav.addFavorite(id).then(this.fav.getAllFavourites);
+    window.location.reload(false);
+    this.isActive = !this.isActive;
     // tslint:disable-next-line:no-conditional-assignment
     if (!(this.isFavor = true)) {
       {
