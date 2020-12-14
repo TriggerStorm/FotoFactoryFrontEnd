@@ -4,9 +4,10 @@
     <ul *ngIf="favourites">
       <div id="picDiv"
             *ngFor="let favourite of favourites">
-
         <div [cdkDragData]="favourites" cdkDrag><img src="{{favourite.path}}" class="pic"></div>
-
+        <div (click)="onClick(favourite.posterId)">
+          <i class="fas fa-heart" style="padding-bottom: 50px" ></i>
+        </div>
   </div>
     </ul>
   </div>

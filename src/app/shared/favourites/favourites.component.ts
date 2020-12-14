@@ -24,8 +24,18 @@ export class FavouritesComponent implements OnInit {
   }
 
 
+
   dropped($event: CdkDragDrop<Favourite[]>): void {
     this.drop.emit($event);
+  }
+
+
+  onClick(fav: number): void {
+    this.favouriteService.removefavor(fav).subscribe(
+      () => {
+        this.favouriteService.getAllFavourites();
+      });
+    window.location.reload(false);
   }
 
 }
