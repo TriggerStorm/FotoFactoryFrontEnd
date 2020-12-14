@@ -12,7 +12,7 @@ export class FavouritesComponent {
 
   @Input()favourites: Favourite[];
   @Output()dropEvent = new EventEmitter<Favourite[]>();
-
+  id: number;
   constructor(private favouriteService: FavouritesService) { }
 
   // tslint:disable-next-line:use-lifecycle-interface

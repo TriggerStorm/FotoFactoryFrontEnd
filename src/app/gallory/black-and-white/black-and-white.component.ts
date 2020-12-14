@@ -29,7 +29,8 @@ export class BlackAndWhiteComponent implements OnInit {
   }
 
 
-  onClick(): void {
-    this.isActive = !this.isActive;
+  onClick(id: number): void {
+    this.fav.addFavorite(id).then(this.fav.getAllFavourites);
+    window.location.reload(false);
   }
 }

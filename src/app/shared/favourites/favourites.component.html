@@ -1,16 +1,14 @@
 <div class="float-right entireDiv">
-  <div style="padding-right: 50px; background-color:#dee5d7">
+  <div  style="padding-right: 50px; background-color: #dee5d7">
     <h2 class="myFav">My Favourites</h2>
     <div *ngIf="favourites"
       cdkDropList
       [cdkDropListData]="favourites"
       class="example-list"
       (cdkDropListDropped)="dropped($event)">
-      <div style="padding-left: 50px" id="picDiv" *ngFor="let favourite of favourites" cdkDrag>
+      <div class="container" style="padding-left: 50px" id="picDiv" *ngFor="let favourite of favourites" cdkDrag>
         <img src="{{favourite.path}}" class="pic">
-        <div (click)="onClick(favourite.posterId)">
-          <i class="fas fa-heart" style="padding-bottom: 50px" ></i>
-        </div>
+        <div (click)="onClick(favourite.posterId)"><i class="fas fa-heart"></i></div>
       </div>
   </div>
   </div>

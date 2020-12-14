@@ -41,18 +41,7 @@ export class DenmarkComponent implements OnInit {
 
 
   onClick(id: number): void {
-    // tslint:disable-next-line:no-unused-expression
     this.fav.addFavorite(id).then(this.fav.getAllFavourites);
     window.location.reload(false);
-    this.isActive = !this.isActive;
-    //this.isActive = !this.isActive;
-    // tslint:disable-next-line:no-conditional-assignment
-    if (!(this.isFavor = true)) {
-      {
-        this.isFavor = true;
-      }
-    } else {
-      this.isFavor = false;
-    }
   }
 }

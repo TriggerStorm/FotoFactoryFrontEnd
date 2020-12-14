@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Lora:ital@1&family=Raleway&display=swap');
 
+.container{
+  position: relative;
+}
+
 .pic{
+  position: relative;
   max-width: 100%;
   max-height: 100%;
   display: block;
   cursor: pointer;
+
+}
+.fas fa-heart > {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .myFav{
@@ -26,3 +37,8 @@
   margin-bottom: 10px;
   margin-left: -5px;
 }
+#dk{
+  background-color: #c08133;
+}
+
+
