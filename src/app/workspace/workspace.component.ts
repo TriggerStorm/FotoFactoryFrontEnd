@@ -16,7 +16,7 @@ export class WorkspaceComponent implements OnInit {
 
   workspaceForm = new FormGroup({
     name: new FormControl(''),
-    background: new FormControl('')
+    backGroundColour: new FormControl('')
   });
 
   workspaces: Workspace[];
