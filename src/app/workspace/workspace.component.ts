@@ -11,7 +11,7 @@ import {EventEmitter} from "events";
 export class WorkspaceComponent implements OnInit {
 
   @Input()favourites: Favourite[];
-  @Output()drop = new EventEmitter<any>();
+ // @Output()drop = new EventEmitter<any>();
 
   constructor() { }
 
@@ -28,6 +28,6 @@ export class WorkspaceComponent implements OnInit {
 
 
   dropped($event: CdkDragDrop<Favourite[]>): void {
-    this.drop.emit($event);
+   // this.drop.emit($event);
   }
 }

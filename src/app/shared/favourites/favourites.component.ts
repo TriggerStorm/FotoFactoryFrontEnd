@@ -12,7 +12,7 @@ import {CdkDragDrop} from "@angular/cdk/drag-drop/drag-events";
 export class FavouritesComponent implements OnInit {
 
   @Input()favourites: Favourite[];
-  @Output()drop = new EventEmitter<any>();
+ //  @Output()drop = new EventEmitter<any>();
 
   constructor(private favouriteService: FavouritesService) { }
 
@@ -26,7 +26,7 @@ export class FavouritesComponent implements OnInit {
 
 
   dropped($event: CdkDragDrop<Favourite[]>): void {
-    this.drop.emit($event);
+    // this.drop.emit($event);
   }
 
 
