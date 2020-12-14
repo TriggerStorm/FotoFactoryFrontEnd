@@ -6,7 +6,7 @@
       [cdkDropListData]="favourites"
       class="example-list"
       (cdkDropListDropped)="dropped($event)">
-      <div  id="picDiv" *ngFor="let favourite of favourites" cdkDrag>
+      <div style="padding-left: 50px" id="picDiv" *ngFor="let favourite of favourites" cdkDrag>
         <img src="{{favourite.path}}" class="pic">
         <div (click)="onClick(favourite.posterId)">
           <i class="fas fa-heart" style="padding-bottom: 50px" ></i>
