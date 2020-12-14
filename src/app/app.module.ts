@@ -25,6 +25,7 @@ import { FavouritesComponent } from './shared/favourites/favourites.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SummaryComponent } from './summary/summary.component';
 import { WorkspaceCanvasComponent } from './workspace/workspace-canvas/workspace-canvas.component';
+import { SignupComponent } from './login/signup/signup.component';
 
 
 
@@ -43,7 +44,8 @@ import { WorkspaceCanvasComponent } from './workspace/workspace-canvas/workspace
     WorkspaceComponent,
     FavouritesComponent,
     SummaryComponent,
-    WorkspaceCanvasComponent
+    WorkspaceCanvasComponent,
+    SignupComponent
   ],
     imports: [
         BrowserModule,

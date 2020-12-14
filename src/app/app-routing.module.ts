@@ -12,9 +12,11 @@ import {BlackAndWhiteComponent} from './gallory/black-and-white/black-and-white.
 import {ScotlandComponent} from './gallory/scotland/scotland.component';
 import {FavouritesComponent} from './shared/favourites/favourites.component';
 import {SummaryComponent} from './summary/summary.component';
+import {SignupComponent} from './login/signup/signup.component';
 
 
 const routes: Routes = [
+  {path: 'signup', component: SignupComponent},
   {path: 'summary', component: SummaryComponent},
   {path: 'fav', component: FavouritesComponent},
   { path: 'workspace', component: WorkspaceComponent},
