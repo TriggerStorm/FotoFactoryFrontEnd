@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {Favourite} from './favourite';
@@ -10,9 +10,7 @@ import {isLineBreak} from 'codelyzer/angular/sourceMappingVisitor';
 })
 export class FavouritesService {
 
-  apiUrl = 'https://localhost:44387/api/Favourite';
-  private PostString: string;
-  private deleteString: string;
+  apiUrl = 'https://localhost:5001/api/favourite';
 
   constructor(private http: HttpClient) { }
 
@@ -23,17 +21,17 @@ export class FavouritesService {
       console.log(a);
       const path = a.path;
       const posterName = a.posterName;
-      return {path, posterName, collectionId: a.collectionId, posterSku: a.posterSku, posterId: a.posterId  } as Favourite ;
+      return {path, posterName, collectionId: a.collectionId, posterSku: a.posterSku } as Favourite ;
     });
   }
-  async addFavorite(fav: number): Promise<any>{
-    this.PostString = 'https://localhost:44387/api/Favourite/' + fav; /* This works for now but it simply add the id to the http sring and dont have a boddy*/
-    await this.http.post<number>(this.PostString, '').toPromise();
+  // tslint:disable-next-line:typedef
+  async addFavorite(fav: number){
+     return this.http.post<number>(environment.apiUrl + '/api/favourite/', + fav).subscribe();
   }
-
-   removefavor(fav: number): Observable<Favourite> {
-    this.deleteString = 'https://localhost:44387/api/Favourite/' + fav;
-    return  this.http.delete<Favourite>(this.apiUrl + '/' + fav);
+  // tslint:disable-next-line:typedef
+  async removefavor(fav: number){
+    // @ts-ignore
+    return this.http.delete<number>(environment.apiUrl + '/api/favourite/', + fav).subscribe();
   }
 
 }

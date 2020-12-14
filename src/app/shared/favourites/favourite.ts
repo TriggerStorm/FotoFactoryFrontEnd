@@ -4,5 +4,5 @@ export interface Favourite{
   posterSku: string;
   path: string;
   collectionId: number;
-  posterId: number;
+  posterid: number;
 }
