@@ -20,7 +20,7 @@ export class WorkspaceComponent implements OnInit {
   });
 
   workspaces: Workspace[];
-  workspaceSelect = 'None';
+  workspaceSelect = null;
   favourites: Favourite[];
   favouritesCanvas = [];
 
@@ -76,7 +76,7 @@ export class WorkspaceComponent implements OnInit {
   mySelectHandler($event: any): any {
     document.getElementById(
       'workspaceId').style.backgroundColor =
-      workspace.background;
+      'red';
   }
 
   save(): void {
@@ -89,6 +89,8 @@ export class WorkspaceComponent implements OnInit {
   }
 
   delete(id: number): void {
+    console.log(id);
+    console.log(this.workspaceSelect);
     this.workspaceService.deleteWorkspace(id)
       .subscribe(message => {
         console.log('Deleted workspace, got message:' + message);

@@ -26,6 +26,6 @@ export class WorkspaceService {
   }
 
   deleteWorkspace(id: number): Observable<any> {
-    return this.http.delete(this.apiUrl + '/api/workspace/' + id);
+    return this.http.delete(this.apiUrl + '/' + id);
   }
 }
