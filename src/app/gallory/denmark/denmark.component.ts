@@ -19,6 +19,7 @@ export class DenmarkComponent implements OnInit {
   posterId = new FormControl('');
   Collection: PosterModel[];
   isFavor: any;
+  favourites: Favourite[];
 
 
   constructor(private Poster: CollectionService,
@@ -30,6 +31,11 @@ export class DenmarkComponent implements OnInit {
       console.log(data);
       this.Collection = data;
     });
+
+    this.fav.getAllFavourites()
+      .then(favourites => {
+        this.favourites = favourites;
+      });
   }
 
   removeTest(id: number): void{
