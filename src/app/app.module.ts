@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -24,6 +24,8 @@ import { WorkspaceComponent } from './workspace/workspace.component';
 import { FavouritesComponent } from './shared/favourites/favourites.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SummaryComponent } from './summary/summary.component';
+import { WorkspaceCanvasComponent } from './workspace/workspace-canvas/workspace-canvas.component';
+import {NgxDropzoneModule} from "ngx-dropzone";
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { SummaryComponent } from './summary/summary.component';
     ScotlandComponent,
     WorkspaceComponent,
     FavouritesComponent,
-    SummaryComponent
+    SummaryComponent,
+    WorkspaceCanvasComponent
   ],
     imports: [
         BrowserModule,
@@ -52,7 +55,9 @@ import { SummaryComponent } from './summary/summary.component';
         BrowserAnimationsModule,
         BsDropdownModule.forRoot(),
         NgxPopper,
-        DragDropModule
+        DragDropModule,
+        NgxDropzoneModule,
+        FormsModule
 
 
     ],

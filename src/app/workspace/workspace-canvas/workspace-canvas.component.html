@@ -1,0 +1,9 @@
+<div class="canvas">
+  <div cdkDropList>
+  <!--[cdkDropListData]="favourites">
+  (cdkDropListDropped)="dropped($event)"-->
+    <div  id="picDiv" *ngFor="let favourite of favourites" >
+      <img  cdkDrag src="{{favourite.path}}" class="pic">
+    </div>
+  </div>
+</div>

@@ -16,10 +16,12 @@ export class AuthenticationService {
     return this.http.post<any>(environment.apiUrl + '/token', {username, password})
       .pipe(map(response => {
         const token = response.token;
+        const userID = response.userId;
+        console.log(response);
         // login successful if there's a jwt token in the response
         if (token) {
           // store username and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify({username, token}));
+          localStorage.setItem('currentUser', JSON.stringify({userID, username, token}));
           // return true to indicate successful login
           return true;
         } else {
@@ -33,6 +35,15 @@ export class AuthenticationService {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser) {
       return currentUser.token;
+    } else {
+      return null;
+    }
+  }
+
+  getUserID(): string {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+      return currentUser.userID;
     } else {
       return null;
     }

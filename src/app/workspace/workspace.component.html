@@ -1,71 +1,83 @@
-<app-favourites></app-favourites>
+<app-favourites [favourites]="favourites" (dropEvent)="dropped($event)"></app-favourites>
 <section style="min-height: 550px; width: 1200px; padding: 30px">
   <div class="container" style="min-height: 550px;">
 
-  <div class="btn-group dropright ml-5">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Choose Workspace
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Kitchen</a>
-        <a class="dropdown-item" href="#">Kitchen 3 pictures</a>
-        <a class="dropdown-item" href="#">Living Room</a>
-        <a class="dropdown-item" href="#">Dinning Room</a>
-      </div>
-    </div>
     <div class="row">
-    <div class="col-md-9" style=" min-height: 580px;">
-      <div class="row justify-content-center" style="padding: 7px">
-
-       <div cdkDropList
-            id="workspaceId"
-            (click)="changeColor()"><!-- cdkDropList [cdkDropListData]="favourites" class="example-list" (cdkDropListDropped)="dropped($event)"-->
-
-
-
-
-        </div>
+    <select [(ngModel)]='workspaceSelect' ngModel (ngModelChange)="mySelectHandler($event)" class="form-control profile-select workspaceSelector">
+      <option value="None" disabled>Select workspace</option>
+      <option *ngFor="let workspace of  workspaces" [ngValue]="workspace.name">
+        {{ workspace.name }}
+      </option>
+    </select>
+      <div class="input-group-append" style="height: 38px">
+        <button class="btn btn-outline-secondary" type="button" style="color: black" (click)="delete(workspace.id)">X</button>
       </div>
+
+
+      <form [formGroup]="workspaceForm" (ngSubmit)="save()">
+      <div class="input-group mb-3" style="width: 400px; margin-left: 100px">
+        <input type="text" class="form-control" formControlName="name" placeholder="New Workspace Name" aria-label="New Workspace Name"
+               aria-describedby="basic-addon2">
+        <div class="input-group-append" style="height: 38px">
+          <button class="btn btn-outline-secondary" type="submit">Create</button>
+        </div>
+        <input class="colorPicker" formControlName="background" name="ColorPickerId" type="color" id="MyColor"/>
+      </div>
+      </form>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-9" style=" min-height: 580px;">
+        <div  cdkDropList  class="row justify-content-center" style="padding: 7px" id="workspaceId" (click)="changeColor()">
+          <app-workspace-canvas [favourites]="favouritesCanvas" (dropEvent)="droppedOnCanvas($event)"></app-workspace-canvas>
+          <!-- <div cdkDropList
+                id="workspaceId"
+                (click)="changeColor()">
+
+
+
+
+          </div>-->
+        </div>
       </div>
       <div class="col-md-3" style="min-height: 550px;">
 
-          <div class="row" style="padding: 7px;">
-            <div class="" style="height: 300px; min-width: 100%;">
-              <div class="dropdown show settingsBoxes">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Size
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Small</a>
-                  <a class="dropdown-item" href="#">Medium</a>
-                  <a class="dropdown-item" href="#">Large</a>
-                </div>
+        <div class="row" style="padding: 7px;">
+          <div class="" style="height: 300px; min-width: 100%;">
+            <div class="dropdown show settingsBoxes">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Size
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Small</a>
+                <a class="dropdown-item" href="#">Medium</a>
+                <a class="dropdown-item" href="#">Large</a>
               </div>
+            </div>
 
-              <div class="dropdown show settingsBoxes">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Frame
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Oak Brown</a>
-                  <a class="dropdown-item" href="#">Oak Black</a>
-                  <a class="dropdown-item" href="#">Aluminium</a>
-                </div>
+            <div class="dropdown show settingsBoxes">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Frame
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Oak Brown</a>
+                <a class="dropdown-item" href="#">Oak Black</a>
+                <a class="dropdown-item" href="#">Aluminium</a>
               </div>
+            </div>
 
 
-              <div class="settingsBoxes">
-                <input class="colorPicker" name="ColorPickerId" type="color" id="MyColor"/>
-              </div>
+            <div class="settingsBoxes">
 
             </div>
-         </div>
+
+          </div>
+        </div>
 
         <div class="row" style="padding: 7px;">
           <div class="" style="height: 100px; min-width: 100%;padding-top: 200px">
-          <button type="button" class="btn btn-primary btn-lg btn-block btnsSaveExport">Save WorkSpace</button>
-            <br><br><br><br>
-            <button type="button" class="btn btn-primary btn-lg btn-block btnsSaveExport">Send Order</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block btnsSaveExport">Save WorkSpace</button>
           </div>
         </div>
 

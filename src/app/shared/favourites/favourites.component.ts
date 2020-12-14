@@ -1,21 +1,21 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
-import {FavouritesService} from './favourites.service';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Favourite} from './favourite';
-import {EventEmitter} from "events";
-import {CdkDragDrop} from "@angular/cdk/drag-drop/drag-events";
+import {CdkDragDrop} from '@angular/cdk/drag-drop/drag-events';
+import {FavouritesService} from './favourites.service';
 
 @Component({
   selector: 'app-favourites',
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.scss']
 })
-export class FavouritesComponent implements OnInit {
+export class FavouritesComponent {
 
   @Input()favourites: Favourite[];
- //  @Output()drop = new EventEmitter<any>();
+  @Output()dropEvent = new EventEmitter<Favourite[]>();
 
   constructor(private favouriteService: FavouritesService) { }
 
+  // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit(): void {
     this.favouriteService.getAllFavourites().then( (data) => {
       console.log(data);
@@ -25,9 +25,6 @@ export class FavouritesComponent implements OnInit {
 
 
 
-  dropped($event: CdkDragDrop<Favourite[]>): void {
-    // this.drop.emit($event);
-  }
 
 
   onClick(fav: number): void {
@@ -36,6 +33,11 @@ export class FavouritesComponent implements OnInit {
         this.favouriteService.getAllFavourites();
       });
     window.location.reload(false);
+  }
+
+  dropped(event: CdkDragDrop<Favourite[]>): void {
+    this.dropEvent.emit([event.container.data[event.previousIndex]]);
+
   }
 
 }
