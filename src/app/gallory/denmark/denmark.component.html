@@ -6,7 +6,6 @@
 </div>
 </div>
 <section style="background:#dee5d7;min-height: 300px; min-width: 300px; padding-top:50px;padding-bottom: 50px;">
-  <button click="removeTest('9')" >delete</button>
 <div class="container-fluid" style="background:#dee5d7;min-height: 300px; padding-bottom: 50px; padding-left: 200px">
   <ul *ngIf="Collection">
     <div class="row">
@@ -15,7 +14,7 @@
         <div class="row">
           <h9 class="text-center" style = "padding-left: 60px; padding-bottom: 20px" >{{posterModel.PosterName}}</h9>
           <div (click)="onClick(posterModel.PId)">
-            <i *ngIf="!isFavor" class="float-right" class="fas fa-heart"style="color: whitesmoke; padding-left: 5px"></i>
+            <i *ngIf="!isFavor" class="float-right" class="fas fa-heart"style="color: red; padding-left: 5px"></i>
             <i *ngIf="isFavor" class="float-right" class="fas fa-heart" style="color: red"[id]="posterModel.PId" style="padding-left:  26px; padding-top: 0px" [ngClass] = "{'active': isActive}"></i>
           </div>
         </div>

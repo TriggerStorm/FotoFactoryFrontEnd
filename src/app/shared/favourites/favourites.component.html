@@ -1,9 +1,12 @@
-<div class="float-right" style="min-height: 550px; max-width: 270px; border-left:  2px solid grey">
+<div class="float-right" style="min-height: 550px; background-color: #dee5d7; max-width: 270px; border-left:  2px solid grey"  >
   <div class="" style=" padding-right: 50px">
     <h2 class="myFav">My Favourites</h2>
   <ul *ngIf="favourites">
       <div *ngFor="let favourite of favourites" style="height: 200px; width: 200px; margin-bottom: 10px; margin-left: -5px;">
         <img src="{{favourite.path}}" class="pic">
+        <div (click)="onClick(favourite.posterId)">
+          <i class="fas fa-heart" style="padding-bottom: 50px" ></i>
+        </div>
       </div>
     </ul>
   </div>

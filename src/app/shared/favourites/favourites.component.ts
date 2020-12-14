@@ -21,5 +21,11 @@ export class FavouritesComponent implements OnInit {
   }
 
 
-
+  onClick(fav: number): void {
+    this.favouriteService.removefavor(fav).subscribe(
+      () => {
+        this.favouriteService.getAllFavourites();
+      });
+    window.location.reload(false);
+  }
 }
