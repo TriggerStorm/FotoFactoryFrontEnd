@@ -76,7 +76,7 @@ export class WorkspaceComponent implements OnInit {
   mySelectHandler($event: any): any {
     document.getElementById(
       'workspaceId').style.backgroundColor =
-      'red';
+      this.workspaceSelect.backgroundcolour;
   }
 
   save(): void {
@@ -84,7 +84,11 @@ export class WorkspaceComponent implements OnInit {
     console.log(workspace);
     this.workspaceService.addWorkspace(workspace)
       .subscribe(() => {
-        this.refresh();
+        this.workspaceService.getAllWorkspaces()
+          .subscribe(listOfWorkspaces => {
+            console.table(listOfWorkspaces);
+            this.workspaces = listOfWorkspaces;
+          });
       });
   }
 
