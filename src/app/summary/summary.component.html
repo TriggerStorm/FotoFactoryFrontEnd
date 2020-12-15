@@ -2,15 +2,12 @@
   <div class="container row" style="height: 550px; min-width: 1500px">
 
     <div class="btn-group dropright ml-5">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        My Workspaces
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Kitchen</a>
-        <a class="dropdown-item" href="#">Kitchen 3 pictures</a>
-        <a class="dropdown-item" href="#">Living Room</a>
-        <a class="dropdown-item" href="#">Dinning Room</a>
-      </div>
+      <select [(ngModel)]='workspaceSelect' ngModel (ngModelChange)="mySelectHandler($event)" class="form-control profile-select workspaceSelector">
+        <option value="None" disabled>Select workspace</option>
+        <option *ngFor="let workspace of  workspaces" [ngValue]="workspace.name">
+          {{ workspace.name }}
+        </option>
+      </select>
     </div>
 
     <div>

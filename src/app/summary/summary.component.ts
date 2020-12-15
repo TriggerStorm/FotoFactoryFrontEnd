@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {WorkspaceService} from '../workspace/workspace.service';
+import {Workspace} from '../workspace/workspace';
 
 @Component({
   selector: 'app-summary',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  workspaceSelect = 'None';
+  workspaces: Workspace[];
+
+  constructor(private workspaceService: WorkspaceService) { }
 
   ngOnInit(): void {
+    this.workspaceService.getAllWorkspaces()
+      .subscribe(listOfWorkspaces => {
+        console.table(listOfWorkspaces);
+        this.workspaces = listOfWorkspaces;
+      });
   }
 
+  mySelectHandler($event: any): any {
+
+  }
 }
