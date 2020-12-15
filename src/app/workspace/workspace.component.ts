@@ -6,6 +6,8 @@ import {FavouritesService} from '../shared/favourites/favourites.service';
 import {Workspace} from './workspace';
 import {WorkspaceService} from './workspace.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Workspaceposter} from './workspaceposter';
+import {WorkspaceposterService} from './workspaceposter.service';
 
 @Component({
   selector: 'app-workspace',
@@ -24,9 +26,12 @@ export class WorkspaceComponent implements OnInit {
   workspaceSelect = null;
   favourites: Favourite[];
   favouritesCanvas = [];
+  workspaceposter: Workspaceposter;
+  private WSP: string;
 
   constructor(private favouriteService: FavouritesService,
-              private workspaceService: WorkspaceService) { }
+              private workspaceService: WorkspaceService,
+              private workspaceposterService: WorkspaceposterService) { }
 
   ngOnInit(): void {
     this.favouriteService.getAllFavourites()
@@ -61,6 +66,8 @@ export class WorkspaceComponent implements OnInit {
         'MyColor') as HTMLInputElement).value;
   }
 
+
+
   dropped($event: Favourite): void {
      // this.drop.emit($event);
     // Push to Canvas
@@ -69,8 +76,9 @@ export class WorkspaceComponent implements OnInit {
   }
 
   droppedOnCanvas($event: Favourite): void {
-
-
+    /*this.WSP = document.getElementById('favourites').id = (document.getElementById(
+      'favourites') as HTMLElement).nodeValue;
+    console.log(this.WSP);*/
   }
 
 
@@ -104,6 +112,19 @@ export class WorkspaceComponent implements OnInit {
         console.log('Deleted workspace, got message:' + message);
         this.refresh();
       });
+
+  }
+
+  SaveWorkSpace(workspaceposter: Workspaceposter): void{
+    workspaceposter.FrameId = 1;
+    workspaceposter.SizeId = 1;
+    workspaceposter.PosterId = 2;
+    workspaceposter.XPos = 40;
+    workspaceposter.YPos = 50;
+    this.workspaceposterService.addWorkSpacePoster(workspaceposter);
+  }
+
+  small() {
 
   }
 }

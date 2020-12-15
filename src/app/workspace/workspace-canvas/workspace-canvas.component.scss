@@ -1,21 +1,35 @@
 .canvas{
-  //background-color: red;
+  background-color: red;
   width: 800px;
-  height: 560px;
+  height: 500px;
   min-width: 100%;
-  //border: 5px solid gray;
+  position: relative;
+  border: 5px solid gray;
   //z-index: -1;
 }
 
-#picDiv{
+#picDivSmall{
+  height: 80px;
+  width: 80px;
+}
+#picDivMedium{
   height: 200px;
   width: 200px;
 }
+#picDivBig{
+  height: 400px;
+  width: 400px;
+}
 
 .pic{
-  max-width: 20%;
-  max-height: 20%;
-  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
   cursor: pointer;
   position: absolute;
+}
+.boundary{
+  //border: 5px dotted red;
+  width: 850px;
+  height: 540px;
 }
