@@ -1,6 +1,6 @@
 export interface Workspace{
   id: number;
   name: string;
-  background: string;
+  backGroundColour: string;
   user: number;
 }

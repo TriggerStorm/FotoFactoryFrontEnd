@@ -5,12 +5,12 @@
     <div class="row">
     <select [(ngModel)]='workspaceSelect' ngModel (ngModelChange)="mySelectHandler($event)" class="form-control profile-select workspaceSelector">
       <option value="None" disabled>Select workspace</option>
-      <option *ngFor="let workspace of  workspaces" [ngValue]="workspace.name">
+      <option *ngFor="let workspace of  workspaces" [ngValue]="workspace">
         {{ workspace.name }}
-      </option>
+     </option>
     </select>
       <div class="input-group-append" style="height: 38px">
-        <!-- <button class="btn btn-outline-secondary" type="button" style="color: black" (click)="delete(workspace.id)">X</button> -->
+        <button class="btn btn-outline-secondary" type="button" style="color: black" (click)="delete(workspaceSelect.workSpaceId)">X</button>
       </div>
 
 
@@ -21,7 +21,7 @@
         <div class="input-group-append" style="height: 38px">
           <button class="btn btn-outline-secondary" type="submit">Create</button>
         </div>
-        <input class="colorPicker" formControlName="background" name="ColorPickerId" type="color" id="MyColor"/>
+        <input class="colorPicker" formControlName="backGroundColour" name="ColorPickerId" type="color" id="MyColor"/>
       </div>
       </form>
     </div>

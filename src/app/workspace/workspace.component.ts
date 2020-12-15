@@ -16,12 +16,12 @@ export class WorkspaceComponent implements OnInit {
 
   workspaceForm = new FormGroup({
     name: new FormControl(''),
-    background: new FormControl('')
+    backGroundColour: new FormControl('')
   });
 
 
   workspaces: Workspace[];
-  workspaceSelect = 'None';
+  workspaceSelect = null;
   favourites: Favourite[];
   favouritesCanvas = [];
 
@@ -77,7 +77,9 @@ export class WorkspaceComponent implements OnInit {
   mySelectHandler($event: any): any {
    /* document.getElementById(
       'workspaceId').style.backgroundColor =
-       workspace.background;*/
+
+      this.workspaceSelect.backgroundcolour;
+*/
   }
 
   save(): void {
@@ -85,12 +87,18 @@ export class WorkspaceComponent implements OnInit {
     console.log(workspace);
     this.workspaceService.addWorkspace(workspace)
       .subscribe(() => {
-        this.refresh();
+        this.workspaceService.getAllWorkspaces()
+          .subscribe(listOfWorkspaces => {
+            console.table(listOfWorkspaces);
+            this.workspaces = listOfWorkspaces;
+          });
       });
   }
 
 
   delete(id: number): void {
+    console.log(id);
+    console.log(this.workspaceSelect);
     this.workspaceService.deleteWorkspace(id)
       .subscribe(message => {
         console.log('Deleted workspace, got message:' + message);
