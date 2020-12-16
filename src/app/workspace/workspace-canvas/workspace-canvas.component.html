@@ -3,7 +3,7 @@
   (cdkDropListDropped)="dropped($event)"-->
 
       <div (click)="select(workspaceposter)" cdkDrag cdkDragBoundary=".boundary"
-           [style.border]="workspaceposter.selected ? 'solid 7px blue': ''"
+           [style.border]="workspaceposter.selected ? 'solid 2px blue': ''"
            [style.width]="getWidth(workspaceposter.SizeId)"
            [style.height]="getHeight(workspaceposter.SizeId)"
            [style.xPos]="getXPos(workspaceposter.XPos)"
