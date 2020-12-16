@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkspaceService} from '../workspace/workspace.service';
 import {Workspace} from '../workspace/workspace';
+import {Summary} from "./summary";
+import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
+import {SummaryService} from "./summary.service";
 
 @Component({
   selector: 'app-summary',
@@ -11,18 +15,30 @@ export class SummaryComponent implements OnInit {
 
   workspaceSelect = 'None';
   workspaces: Workspace[];
+  summaries: Summary[];
 
-  constructor(private workspaceService: WorkspaceService) { }
+  constructor(private workspaceService: WorkspaceService,
+              private summaryService: SummaryService) { }
+
+  apiUrl = 'https://localhost:44387/api/workspace';
 
   ngOnInit(): void {
     this.workspaceService.getAllWorkspaces()
       .subscribe(listOfWorkspaces => {
-        console.table(listOfWorkspaces);
         this.workspaces = listOfWorkspaces;
       });
+
+    this.summaryService.getAllSummary()
+      .subscribe(listOfSummaries => {
+        console.table(listOfSummaries);
+        this.summaries = listOfSummaries;
+      });
   }
+
+
 
   mySelectHandler($event: any): any {
 
   }
+
 }

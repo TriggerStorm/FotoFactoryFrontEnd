@@ -17,37 +17,23 @@
     <div class="row">
       <div class="col-md-9" style=" height: 530px; min-width: 1500px">
         <div class="row justify-content-center" style="padding: 7px">
-          <table class="table table-bordered">
+          <table class="table table-borderless">
             <thead>
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Poster Name</th>
-              <th scope="col">Size</th>
               <th scope="col">Frame</th>
+              <th scope="col">Size</th>
               <th scope="col">Price</th>
+              <th scope="col">SKU Code</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Forest</td>
-              <td>A3</td>
-              <td>Dark Oak</td>
-              <td>€ 11</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Sea</td>
-              <td>A5</td>
-              <td>Black Oak</td>
-              <td>€ 30</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>City</td>
-              <td>50x70</td>
-              <td>White Aluminium</td>
-              <td>€ 45</td>
+            <tr *ngFor="let summary of  summaries">
+              <td> {{ summary.posterName }}</td>
+              <td>{{ summary.frame }}</td>
+              <td>{{ summary.size }}</td>
+              <td>{{ summary.price }}</td>
+              <td>{{ summary.skuCode }}</td>
             </tr>
 
             </tbody>

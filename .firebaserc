@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "fotofactory-frontend"
+  },
+  "targets": {
+    "fotofactory-frontend": {
+      "hosting": {
+        "FotoFactoryFrontEnd": [
+          "fotofactory-frontend"
+        ]
+      }
+    }
+  }
+}
