@@ -20,16 +20,17 @@ export class SummaryService {
               private authService: AuthenticationService) { }
 
 
-  getAllSummary(): Observable<Summary[]>{
-    const workspaces = this.workspaceService.getAllWorkspaces();
+  async getAllSummary(): Promise<any[]>{
+    const workspaces = await this.workspaceService.getAllWorkspaces();
     const listOFIds = [];
-    workspaces.forEach( (value) => {
+
+    await workspaces.forEach( (value) => {
       value.forEach( (obj) => {
         // @ts-ignore
         listOFIds.push(obj.workSpaceId);
       });
       console.log(listOFIds);
     });
-    return this.http.post<Summary[]>(environment.apiUrl + '/api/summary', listOFIds);
+    return await this.http.post<Summary[]>(environment.apiUrl + '/api/summary', listOFIds).toPromise();
   }
 }

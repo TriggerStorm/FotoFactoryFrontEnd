@@ -15,7 +15,7 @@ export class SummaryComponent implements OnInit {
 
   workspaceSelect = 'None';
   workspaces: Workspace[];
-  summaries: Summary[];
+  summaries: any[];
 
   constructor(private workspaceService: WorkspaceService,
               private summaryService: SummaryService) { }
@@ -28,11 +28,10 @@ export class SummaryComponent implements OnInit {
         this.workspaces = listOfWorkspaces;
       });
 
-    this.summaryService.getAllSummary()
-      .subscribe(listOfSummaries => {
-        console.table(listOfSummaries);
-        this.summaries = listOfSummaries;
-      });
+    this.summaryService.getAllSummary().then(data => {
+      console.table(data);
+      this.summaries = data;
+    });
   }
 
 
