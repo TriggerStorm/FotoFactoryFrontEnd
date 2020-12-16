@@ -30,7 +30,13 @@
     <div class="row">
           <div class="col-md-9" style=" min-height: 580px;">
             <div class="row justify-content-center" style="padding: 7px" id="workspaceId" (click)="changeColor()">
-          <app-workspace-canvas [favourites]="favouritesCanvas" (dropEvent)="droppedOnCanvas($event)"></app-workspace-canvas>
+          <app-workspace-canvas
+            [favourites]="favouritesCanvas"
+            [workspaceposters]="workspacePosterCanvas"
+            (selectEvent)="selectePoster($event)"
+            (dropEvent)="droppedOnCanvas($event)">
+
+          </app-workspace-canvas>
         </div>
       </div>
 
@@ -45,9 +51,9 @@
                 Choose Size
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" >Small</a>
-                <a class="dropdown-item" >Medium</a>
-                <a class="dropdown-item" >Large</a>
+                <a class="dropdown-item" (click)="changeSize(1)" >Small</a>
+                <a class="dropdown-item" (click)="changeSize(2)">Medium</a>
+                <a class="dropdown-item" (click)="changeSize(3)">Large</a>
               </div>
             </div>
 

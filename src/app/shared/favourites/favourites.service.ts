@@ -10,7 +10,7 @@ import {isLineBreak} from 'codelyzer/angular/sourceMappingVisitor';
 })
 export class FavouritesService {
 
-  apiUrl = 'https://localhost:5001/api/favourite';
+  apiUrl = 'https://localhost:44387/api/favourite';
   private PostString: string;
   private deleteString: string;
 

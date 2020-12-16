@@ -28,6 +28,8 @@ export class WorkspaceComponent implements OnInit {
   favouritesCanvas = [];
   workspaceposter: Workspaceposter;
   private WSP: string;
+  workspacePosterCanvas: Workspaceposter[] = [];
+  private selectedPoster: Workspaceposter;
 
   constructor(private favouriteService: FavouritesService,
               private workspaceService: WorkspaceService,
@@ -71,6 +73,7 @@ export class WorkspaceComponent implements OnInit {
   dropped($event: Favourite): void {
      // this.drop.emit($event);
     // Push to Canvas
+    this.workspacePosterCanvas.push({favourite: $event[0], FrameId: 1, YPos: 20, XPos: 10, PosterId: 11, SizeId: 1});
     console.log($event);
     this.favouritesCanvas.push($event[0]);
   }
@@ -126,5 +129,17 @@ export class WorkspaceComponent implements OnInit {
 
   small() {
 
+  }
+
+  selectePoster($event: Workspaceposter): void {
+    this.selectedPoster = $event;
+    this.workspacePosterCanvas.forEach(poster => {
+      poster.selected = poster.favourite.posterId === $event.favourite.posterId;
+    });
+
+  }
+
+  changeSize(id: number): void {
+    this.selectedPoster.SizeId = id;
   }
 }
