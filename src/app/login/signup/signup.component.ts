@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {SignupService} from './signup.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,8 @@ export class SignupComponent implements OnInit {
     passwordHash: new FormControl('')
   });
 
-  constructor(private signupService: SignupService) { }
+  constructor(private signupService: SignupService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,7 @@ export class SignupComponent implements OnInit {
     console.table(user);
     this.signupService.addUser(user)
       .subscribe(() => {
+        this.router.navigateByUrl('/login');
       });
   }
 }
