@@ -6,18 +6,16 @@
     <p id="text">In this Gallery you can find posters and mark them as favourites and go to the WorkSpace and try them on you wall</p>
   </div>
 </div>
-<section style="background:#dddad0;min-height: 300px;padding-top:50px;padding-bottom: 25px;">
-  <div class="container" style="background:#dddad0;min-height: 225px;padding-bottom: 20px">
+<section style="background:#dddad0;min-height: 300px; min-width: 300px; padding-top:50px;padding-bottom: 50px;">
+  <div class="container-fluid" style="background:#dddad0;min-height: 300px; padding-bottom: 50px; padding-left: 50px">
     <ul *ngIf="Collection">
       <div class="row">
-        <div *ngFor="let posterModel of Collection">
-          <div class="col-3">
-            <img src="{{posterModel.Path}}" id ={{posterModel.id}} class="pic" width="200" height="200">
-            <div class="row">
-              <h5 class="col-md-6" style=" padding-left: 0px">name</h5>
-              <div (click)="onClick()">
-                <i class="fas fa-heart" style="padding-left:  26px; padding-top: 10px" [ngClass] = "{'active': isActive}"></i>
-              </div>
+        <div class="col-3" *ngFor="let posterModel of Collection" style="background-color: #dddad0">
+          <img src="{{posterModel.Path}}" id ={{posterModel.id}} class="pic" width="300" height="300">
+          <div class="row">
+            <h9 class="text-center" style = "padding-left: 60px; padding-bottom: 20px" >{{posterModel.PosterName}}</h9>
+            <div (click)="onClick(posterModel.PId)">
+              <i  class="float-right" class="fas fa-heart"style="color: red; padding-left: 5px"></i>
             </div>
           </div>
         </div>

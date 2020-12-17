@@ -28,7 +28,9 @@ export class FaroeIslandsComponent implements OnInit {
       });
   }
 
-  onClick(): void {
+  onClick(id: number): void {
+    this.fav.addFavorite(id).then(this.fav.getAllFavourites);
+    window.location.reload(false);
     this.isActive = !this.isActive;
   }
 }
