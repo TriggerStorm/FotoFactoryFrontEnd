@@ -19,7 +19,6 @@ export class SummaryService {
               private workspaceService: WorkspaceService,
               private authService: AuthenticationService) { }
 
-
   async getAllSummary(): Promise<any[]>{
     const workspaces = await this.workspaceService.getAllWorkspaces();
     const listOFIds = [];

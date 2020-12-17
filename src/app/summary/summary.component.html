@@ -1,18 +1,18 @@
 <section style="height: 550px; width: 1200px; padding: 30px">
   <div class="container row" style="height: 550px; min-width: 1500px">
 
-    <div class="btn-group dropright ml-5">
+    <!--<div class="btn-group dropright ml-5">
       <select [(ngModel)]='workspaceSelect' ngModel (ngModelChange)="mySelectHandler($event)" class="form-control profile-select workspaceSelector">
         <option value="None" disabled>Select workspace</option>
         <option *ngFor="let workspace of  workspaces" [ngValue]="workspace.name">
           {{ workspace.name }}
         </option>
       </select>
-    </div>
+    </div>-->
 
-    <div>
-      <button class="btnExport">Export order</button>
-    </div>
+    <!--<div>
+      <button class="btnExport" (click)="saveAsFile()">Export order</button>
+    </div>-->
 
     <div class="row">
       <div class="col-md-9" style=" height: 530px; min-width: 1500px">

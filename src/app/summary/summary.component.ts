@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkspaceService} from '../workspace/workspace.service';
 import {Workspace} from '../workspace/workspace';
-import {Summary} from "./summary";
-import {Observable} from "rxjs";
-import {environment} from "../../environments/environment";
-import {SummaryService} from "./summary.service";
+import {Summary} from './summary';
+import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+import {SummaryService} from './summary.service';
+import { saveAs } from 'file-saver';
+import {FileSaverService} from 'ngx-filesaver';
 
 @Component({
   selector: 'app-summary',
@@ -18,7 +20,8 @@ export class SummaryComponent implements OnInit {
   summaries: any[];
 
   constructor(private workspaceService: WorkspaceService,
-              private summaryService: SummaryService) { }
+              private summaryService: SummaryService,
+              private fileSaverService: FileSaverService) { }
 
   apiUrl = 'https://localhost:44387/api/workspace';
 
@@ -38,6 +41,15 @@ export class SummaryComponent implements OnInit {
 
   mySelectHandler($event: any): any {
 
+  }
+
+  saveAsFile(): void {
+    this.summaryService.getAllSummary().then(data => {
+      this.summaries = data;
+    })
+      .then(res => {
+      this.fileSaverService.save(( res as any).data, 'Summary');
+    });
   }
 
 }
