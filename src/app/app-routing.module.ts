@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'scotland', component: ScotlandComponent},
 
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent}, /*//, canActivate: [AuthGuard] },*/
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }];
 
 
