@@ -28,13 +28,14 @@ export class FavouritesService {
   }
   // tslint:disable-next-line:typedef
   async addFavorite(fav: number): Promise<any> {
-    this.PostString = 'https://localhost:44387/api/Favourite/' + fav; /* This works for now but it simply add the id to the http sring and dont have a boddy*/
+    // tslint:disable-next-line:max-line-length
+    this.PostString = environment.apiUrl + '/api/favourite/' + fav; /* This works for now but it simply add the id to the http sring and dont have a boddy*/
     await this.http.post<number>(this.PostString, '').toPromise();
     // tslint:disable-next-line:typedef
   }
   removefavor(fav: number): Observable<Favourite> {
-    this.deleteString = 'https://localhost:44387/api/Favourite/' + fav;
-    return  this.http.delete<Favourite>(this.apiUrl + '/' + fav);
+    this.deleteString = environment.apiUrl + '/api/favourite/' + fav;
+    return  this.http.delete<Favourite>(environment.apiUrl + '/api/favourite/' + fav);
   }
 
 }
