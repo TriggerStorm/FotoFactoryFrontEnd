@@ -17,7 +17,7 @@ export class WorkspaceService {
 
   getAllWorkspaces(): Observable<Workspace[]>{
     const userId = this.authService.getUserID();
-    return this.http.get<Workspace[]>(environment.apiUrl + '/api/workspace?userID=1' );
+    return this.http.get<Workspace[]>(environment.apiUrl + '/api/workspace?userID=' + userId);
   }
 
   addWorkspace(workspace: Workspace): Observable<Workspace>{
