@@ -142,4 +142,8 @@ export class WorkspaceComponent implements OnInit {
   changeSize(id: number): void {
     this.selectedPoster.SizeId = id;
   }
+
+  changeFrame(id: number): void {
+    this.selectedPoster.FrameId = id;
+  }
 }

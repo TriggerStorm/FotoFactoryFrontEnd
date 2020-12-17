@@ -2,13 +2,14 @@
   <!--[cdkDropListData]="favourites">
   (cdkDropListDropped)="dropped($event)"-->
 
-      <div (click)="select(workspaceposter)" cdkDrag cdkDragBoundary=".boundary"
-           [style.border]="workspaceposter.selected ? 'solid 2px blue': ''"
+      <div class="fill" (click)="select(workspaceposter)" cdkDrag cdkDragBoundary=".boundary"
+           [style.border]="workspaceposter.selected ? '': ''"
            [style.width]="getWidth(workspaceposter.SizeId)"
            [style.height]="getHeight(workspaceposter.SizeId)"
            [style.xPos]="getXPos(workspaceposter.XPos)"
            *ngFor="let workspaceposter of workspaceposters"  >
-      <img src="{{workspaceposter.favourite.path}}" class="pic" >
+      <img [style.border]="getBorder(workspaceposter.FrameId)"
+        src="{{workspaceposter.favourite.path}}" class="pic" >
 
     </div>
   </div>

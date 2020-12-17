@@ -56,4 +56,14 @@ export class WorkspaceCanvasComponent {
   getXPos(XPos: number) {
 
   }
+
+  getBorder(FrameId: number): string {
+    switch (FrameId) {
+      case 1: return '';
+      case 2: return 'solid 2px black';
+      case 3: return 'solid 2px green';
+      case 4: return 'solid 2px blue';
+      default: return 'dotted 4px lightblue';
+    }
+  }
 }

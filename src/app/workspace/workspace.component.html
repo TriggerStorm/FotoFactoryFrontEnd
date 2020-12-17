@@ -1,21 +1,21 @@
 <app-favourites [favourites]="favourites" (dropEvent)="dropped($event)"></app-favourites>
-<section style="min-height: 550px; width: 1200px; padding: 30px">
+<section style="min-height: 550px; width: 1650px; padding: 30px">
   <div class="container" style="min-height: 550px;">
     <!-- Create work space select and delete -->
-    <div class="row">
+    <div class="row" style="padding-bottom: 20px; padding-left: 20px">
     <select [(ngModel)]='workspaceSelect' ngModel (ngModelChange)="mySelectHandler($event)" class="form-control profile-select workspaceSelector">
       <option value="None" disabled>Select workspace</option>
       <option *ngFor="let workspace of  workspaces" [ngValue]="workspace">
         {{ workspace.name }}
      </option>
     </select>
-      <div class="input-group-append" style="height: 38px">
+      <div class="input-group-append" style="height: 38px; padding-left: 5px" >
         <button class="btn btn-outline-secondary" type="button" style="color: black" (click)="delete(workspaceSelect.workSpaceId)">X</button>
       </div>
 
 
       <form [formGroup]="workspaceForm" (ngSubmit)="save()">
-      <div class="input-group mb-3" style="width: 400px; margin-left: 100px">
+      <div class="input-group mb-3" style="width: 400px; margin-left: 415px">
         <input type="text" class="form-control" formControlName="name" placeholder="New Workspace Name" aria-label="New Workspace Name"
                aria-describedby="basic-addon2">
         <div class="input-group-append" style="height: 38px">
@@ -27,8 +27,8 @@
     </div>
 
     <!--   Cavass    -->
-    <div class="row">
-          <div class="col-md-9" style=" min-height: 580px;">
+    <div class="row" align="center">
+          <div class="col-12" style=" min-height: 580px;">
             <div class="row justify-content-center" style="padding: 7px" id="workspaceId" (click)="changeColor()">
           <app-workspace-canvas
             [favourites]="favouritesCanvas"
@@ -39,13 +39,14 @@
           </app-workspace-canvas>
         </div>
       </div>
-
+    </div>
 
       <!-- Size and Frame Selection and export?  -->
+    <div class="row">
       <div class="col-md-3" style="min-height: 550px;">
 
         <div class="row" style="padding: 7px;">
-          <div class="" style="height: 300px; min-width: 100%;">
+          <div class="" style="height: 300px; min-width: 100%;padding-left: 990px ">
             <div class="dropdown show settingsBoxes">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose Size
@@ -56,17 +57,17 @@
                 <a class="dropdown-item" (click)="changeSize(3)">Large</a>
               </div>
             </div>
-
+            <!--
             <div class="dropdown show settingsBoxes">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose Frame
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Oak Brown</a>
-                <a class="dropdown-item" href="#">Oak Black</a>
-                <a class="dropdown-item" href="#">Aluminium</a>
+                <a class="dropdown-item" (click)="changeFrame(2)">Black</a>
+                <a class="dropdown-item" (click)="changeFrame(3)" >Green</a>
+                <a class="dropdown-item" (click)="changeFrame(4)" >Blue</a>
               </div>
-            </div>
+            </div> -->
 
 
             <div class="settingsBoxes">
@@ -74,14 +75,13 @@
             </div>
 
           </div>
-        </div>
-
+          <!--
         <div class="row" style="padding: 7px;">
           <div class="" style="height: 100px; min-width: 100%;padding-top: 200px">
             <button type="button" class="btn btn-primary btn-lg btn-block btnSaveExport" (click)="SaveWorkSpace(workspaceposter)" >Save WorkSpace</button>
           </div>
+        </div>-->
         </div>
-
       </div>
     </div>
   </div>
