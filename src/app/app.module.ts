@@ -25,7 +25,9 @@ import { FavouritesComponent } from './shared/favourites/favourites.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { SummaryComponent } from './summary/summary.component';
 import { WorkspaceCanvasComponent } from './workspace/workspace-canvas/workspace-canvas.component';
-import { FileSaverModule } from 'ngx-filesaver';
+// import { FileSaverModule } from 'ngx-filesaver';
+import { SignupComponent } from './login/signup/signup.component';
+
 
 
 
@@ -44,7 +46,8 @@ import { FileSaverModule } from 'ngx-filesaver';
     WorkspaceComponent,
     FavouritesComponent,
     SummaryComponent,
-    WorkspaceCanvasComponent
+    WorkspaceCanvasComponent,
+    SignupComponent
   ],
     imports: [
         BrowserModule,
@@ -58,7 +61,7 @@ import { FileSaverModule } from 'ngx-filesaver';
         NgxPopper,
         DragDropModule,
         FormsModule,
-        FileSaverModule
+        // FileSaverModule
 
     ],
   providers: [],
